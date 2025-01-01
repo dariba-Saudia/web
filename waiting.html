@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="static/js/sweetalert2@11.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/payment.css">
+    <script src="static/js/imask.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <title>صفحة الدفع الآمن</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="static/css/footer.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    
+   
+    <link href="static/css/fontFase.css" rel="stylesheet">
+    <title>عداد الدقيقة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+    
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;
+    gap: 10px;
+    z-index: 100;
+    outline: 1px solid gray;
+    background-color: #fefefc;
+    width: fit-content;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 18px;;">
+        <img src="static/images/secure-payment.png" height="40px">
+        <h1 style="display:flex;gap:4px;flex-direction: column;">
+            <b style="font-size:18px">دفع آمن</b>
+            <b style="font-size:10px">عمليات دفع مشفرة بالكامل</b>
+        </h1>
+    </div>
+    <div class="timer-container">
+        <div class="message">برجاء انتظار الكود</div>
+        <div class="timer" id="timer">01:00</div>
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // تعيين الوقت المبدئي بالدقائق والثواني
+        let minutes = 1;
+        let seconds = 0;
+
+        // تحديث العداد كل ثانية
+        const timerElement = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            if (minutes > 0 || seconds > 0) {
+                if (seconds === 0) {
+                    minutes--;
+                    seconds = 59;
+                } else {
+                    seconds--;
+                }
+                timerElement.textContent = 
+                    `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            } else {
+                clearInterval(countdown);
+                // الانتقال إلى الصفحة التالية بعد انتهاء الوقت
+                window.location.href = "verification.html";
+            }
+        }, 1000);
+    </script>
+     <footer>
+        <span>
+            <h1>تابعنا على وسائل التواصل</h1>
+            <div>
+                <a   target="_blank"href=""> <i class="fab fa-facebook"></i></a>
+                <a target="_blank" href=""> <i class="fab fa-instagram"></i></a>
+                <a target="_blank" href=""> <i class="fab fa-snapchat"></i></a>
+            </div>
+        </span>
+        <img src="static/images/payment.png" width="50%">
+        <div><span>حقوق النشر محفوظة © 2028</span></div>
+        </footer>
+</body>
+</html>

